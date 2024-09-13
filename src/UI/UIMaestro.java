@@ -35,12 +35,14 @@ public class UIMaestro {
 
         }while (respuesta != 3) ;
 
-        public static void agregarTutoria(){
-            System.out.println("Agregar tutoria");
-            System.out.println("Ingresa la fecha del curso");
-            Scanner sc = new Scanner(System.in);
-            String fecha = sc.nextLine();
-            System.out.println("Ingresa la hora del curso");
-        }
+       
+    }
+
+    public static void agregarTutoria(){
+        System.out.println("Agregar tutoria");
+        System.out.println("Ingresa la fecha del curso");
+        Scanner sc = new Scanner(System.in);
+        String fecha = sc.nextLine();
+        System.out.println("Ingresa la hora del curso");
     }
 }
