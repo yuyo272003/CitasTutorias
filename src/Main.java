@@ -1,6 +1,8 @@
 import Model.Estudiante;
 import Model.Maestro;
 import Model.Usuario;
+import UI.UIMaestro;
+
 import static UI.UIMenu.*;
 
 
@@ -95,6 +97,8 @@ public class Main {
 
 
         mostrarMenu();
+
+
 
 
         }

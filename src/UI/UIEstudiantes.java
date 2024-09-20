@@ -22,14 +22,10 @@ public class UIEstudiantes {
 
             switch(respuesta){
                 case 1:
-                    System.out.println("Agendar tutoria");
-                    System.out.println("Seleccione una opcion:");
-                    for(int i = 0;i < 12;i++){
-                        System.out.println((i + 1)+ " " + MESES[i]);
-                    }
+                    agendarTutoria();
                     break;
                 case 2:
-                    System.out.println("Mis tutorias");
+                    listarMisTutorias();
                     break;
                 case 0:
                     System.out.println("Bye Bye");
@@ -45,4 +41,19 @@ public class UIEstudiantes {
 
         }while (respuesta != 0);
     }
+
+    private static void agendarTutoria() {
+
+        System.out.println("..::Agendar Tutoria::..");
+
+
+    }
+
+
+    private static void listarMisTutorias() {
+        System.out.println("..::Listar Tutorias::..");
+
+    }
+
+
 }

@@ -1,7 +1,5 @@
 package Model;
-import Model.CitaTutoria;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class Maestro extends Usuario {
 
@@ -12,18 +10,22 @@ public class Maestro extends Usuario {
     private String especialidad;
 
     public String getEspecialidad() {
+
         return especialidad;
     }
 
     public void setEspecialidad(String especialidad) {
+
         this.especialidad = especialidad;
     }
 
     public int getNumPersonal() {
+
         return numPersonal;
     }
 
     public void setNumPersonal(int numPersonal) {
+
         this.numPersonal = numPersonal;
     }
 
@@ -47,16 +49,19 @@ public class Maestro extends Usuario {
 
     ArrayList<TutoriasDisponibles> tutoriasDisponibles = new ArrayList<>();
 
-    public void addCursoDisponible(Date fecha, String hora) {
+
+
+    public void addCursoDisponible(String fecha, String hora) {
         tutoriasDisponibles.add(new TutoriasDisponibles(fecha, hora));
     }
+
 
     public ArrayList<TutoriasDisponibles> getCursoDisponibles() {
         return tutoriasDisponibles;
     }
 
     public static class TutoriasDisponibles extends CitaTutoria {
-        public TutoriasDisponibles(Date fecha, String hora) {
+        public TutoriasDisponibles(String fecha, String hora) {
             super(fecha, hora);
         }
     }

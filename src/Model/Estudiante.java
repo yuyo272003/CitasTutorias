@@ -42,6 +42,6 @@ public class Estudiante extends Usuario{
 
      @Override
      public void saludar() {
-
+          System.out.println("Hola Estudiante");
      }
 }

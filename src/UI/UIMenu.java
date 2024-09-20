@@ -42,10 +42,10 @@ public class UIMenu {
                     loginUsuario(1);
                     break;
                 case 2:
-                    estudianteMenu();
+                    loginUsuario(2);
                     break;
                 case 3:
-                    secretariaMenu();
+                    loginUsuario(3);
                     break;
                 case 0:
                     System.out.println("...::Bye Bye::..");
