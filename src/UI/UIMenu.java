@@ -30,7 +30,7 @@ public class UIMenu {
 
             System.out.println("1. Maestros");
             System.out.println("2. Estudiantes");
-            System.out.println("3. Model.Secretaria");
+            System.out.println("3. Secretaria");
             System.out.println("0. Salir");
 
             Scanner sc = new Scanner(System.in);
@@ -78,9 +78,12 @@ public static void loginUsuario(int tipoUsuario){
                     maestroLoggeado = maestro;
                     System.out.println("Hola Maestro " + maestro.getNombre());
                     maestroMenu();
+                }else {
+                    System.out.println("Usuario no valido");
+                    banderaCorreo = false;
                 }
             }
-        } //hola
+        }
 
         if (tipoUsuario == 2) {
             for (Estudiante estudiante : estudiantes) {
@@ -91,6 +94,9 @@ public static void loginUsuario(int tipoUsuario){
                     estudianteLoggeado = estudiante;
                     System.out.println("Hola Estudiante " + estudiante.getNombre());
                     estudianteMenu();
+                }else {
+                    System.out.println("Usuario no valido");
+                    banderaCorreo = false;
                 }
             }
         }
@@ -104,6 +110,9 @@ public static void loginUsuario(int tipoUsuario){
                     secretariaLoggeado = secretaria;
                     System.out.println("Hola Secretaria " + secretaria.getNombre());
                     secretariaMenu();
+                }else {
+                    System.out.println("Usuario no valido");
+                    banderaCorreo = false;
                 }
             }
         }

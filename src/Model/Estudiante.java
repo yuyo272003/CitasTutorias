@@ -1,10 +1,14 @@
 package Model;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 public class Estudiante extends Usuario{
 
 
      private String matricula;
      private String semestre;
+     ArrayList<CitaMaestro> tutoriasAgendadas = new ArrayList();
 
 
      public String getSemestre() {
@@ -43,5 +47,9 @@ public class Estudiante extends Usuario{
      @Override
      public void saludar() {
           System.out.println("Hola Estudiante");
+     }
+
+     public void addTutoriasMaestro(Maestro maestro, Date fecha, String hora){
+          tutoriasAgendadas.add(new CitaMaestro(maestro,this));
      }
 }

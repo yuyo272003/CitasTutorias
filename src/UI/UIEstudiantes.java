@@ -1,5 +1,7 @@
 package UI;
 
+import Model.Maestro;
+
 import java.util.Scanner;
 
 public class UIEstudiantes {
@@ -34,11 +36,7 @@ public class UIEstudiantes {
                 default:
                     System.out.println("Por favor seleccione una respuesta valida");
                     break;
-
             }
-
-
-
         }while (respuesta != 0);
     }
 
@@ -46,6 +44,45 @@ public class UIEstudiantes {
 
         System.out.println("..::Agendar Tutoria::..");
 
+        int respuestaConfirmacion = 0;
+
+        do {
+
+            System.out.println("Seleccione un maestro: ");
+            int i = 1;
+            for (Maestro maestro : UIMaestro.maestrosConTutorias) {
+                System.out.println(i + " " + maestro.getNombre());
+                i++;
+            }
+            Scanner sc = new Scanner(System.in);
+            int respuestaMaestro = sc.nextInt();
+
+            Maestro maestroSeleccionado = UIMaestro.maestrosConTutorias.get(respuestaMaestro-1);
+
+
+            System.out.println("Seelccione una tutoria: ");
+            i = 1;
+            for (Maestro.TutoriasDisponibles td : UIMaestro.maestrosConTutorias.get(respuestaMaestro - 1).getCursoDisponibles()) {
+                System.out.println(i + " .- "+ td.getFecha() + " " + td.getHora());
+                i++;
+            }
+            int tutoriaSeleccionado = sc.nextInt();
+
+
+            do{
+                System.out.println("Maestro " + maestroSeleccionado.getNombre() +
+                        " ,Tutoria: " + maestroSeleccionado.getCursoDisponibles().get(tutoriaSeleccionado-1));
+                System.out.println("1.- Para continuar. \n2.- Cambiar Tutoria. ");
+                respuestaMaestro = sc.nextInt();
+
+            }while(respuestaMaestro < 1 || respuestaMaestro > 2);
+
+            if(respuestaConfirmacion == 1){
+                Maestro.TutoriasDisponibles ts = maestroSeleccionado.getCursoDisponibles().get(tutoriaSeleccionado-1);
+
+                UIMenu.estudianteLoggeado.addTutoriasMaestro(maestroSeleccionado,ts.getFecha(), ts.getHora());
+            }
+        }while(respuestaConfirmacion != 1);
 
     }
 

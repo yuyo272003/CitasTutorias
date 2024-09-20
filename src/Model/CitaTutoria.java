@@ -44,7 +44,7 @@ public class CitaTutoria {
         this.hora = hora;
     }
 
-    public  String getFecha(){
+    public Date getFecha(){
         return formato.format(fecha);
     }
 

@@ -2,25 +2,18 @@ package Model;
 
 import java.util.Date;
 
-public class CitaMaestro extends Maestro implements IAgendable{
+public class CitaMaestro implements IAgendable {
+
     private int id;
     private Maestro maestro;
     private Estudiante estudiante;
     private Date fecha;
     private String hora;
 
-    public CitaMaestro(String nombre, String correo, int numPersonal, String especialidad) {
-        super(nombre, correo, numPersonal, especialidad);
+    public CitaMaestro(Maestro maestro, Estudiante estudiante) {
+        this.maestro = maestro;
+        this.estudiante = estudiante;
     }
-
-    public String getHora() {
-        return hora;
-    }
-
-    public void setHora(String hora) {
-        this.hora = hora;
-    }
-
 
     public int getId() {
         return id;
@@ -38,7 +31,13 @@ public class CitaMaestro extends Maestro implements IAgendable{
         this.maestro = maestro;
     }
 
+    public Estudiante getEstudiante() {
+        return estudiante;
+    }
 
+    public void setEstudiante(Estudiante estudiante) {
+        this.estudiante = estudiante;
+    }
 
     public Date getFecha() {
         return fecha;
@@ -48,22 +47,17 @@ public class CitaMaestro extends Maestro implements IAgendable{
         this.fecha = fecha;
     }
 
-    public Estudiante getEstudiante() {
-        return estudiante;
+    public String getHora() {
+        return hora;
     }
 
-    public void setEstudiante(Estudiante estudiante) {
-        this.estudiante = estudiante;
+    public void setHora(String hora) {
+        this.hora = hora;
     }
-
 
     @Override
     public void agendar(Date fecha, String hora) {
-
-    }
-
-    @Override
-    public void saludar() {
-
+        this.fecha = fecha;
+        this.hora = hora;
     }
 }

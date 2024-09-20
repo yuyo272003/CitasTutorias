@@ -6,6 +6,7 @@ import static UI.UIMenu.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class UIMaestro {
+
     public static ArrayList<Maestro> maestrosConTutorias = new ArrayList<>();
 
     public static void maestroMenu() {
@@ -91,6 +92,7 @@ public class UIMaestro {
             maestrosConTutorias.add(maestro);
         }
     }
+
 
     public static void listarTutorias() {
         System.out.println("Listado de tutorias");
