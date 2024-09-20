@@ -80,7 +80,7 @@ public static void loginUsuario(int tipoUsuario){
                     maestroMenu();
                 }
             }
-        }
+        } //hola
 
         if (tipoUsuario == 2) {
             for (Estudiante estudiante : estudiantes) {

@@ -6,6 +6,8 @@ public class UIMaestro {
     public static void maestroMenu() {
         int respuesta;
         System.out.println("..:: Maestro "+ maestroLoggeado.getNombre() + "::..");
+
+        do {
         System.out.println("Seleccione una opción");
         System.out.println("1. Agregar curso");
         System.out.println("2. Listar mis cursos");
@@ -13,8 +15,10 @@ public class UIMaestro {
 
         Scanner sc = new Scanner(System.in);
 
-        do {
+
             respuesta = Integer.parseInt(sc.nextLine());
+
+
             switch (respuesta) {
                 case 1:
                     System.out.println("Ingrese un nombre del curso");
