@@ -28,10 +28,6 @@ public class CitaTutoria {
         this.id = id;
     }
 
-    public Date getFecha(int x) {
-        return fecha;
-    }
-
     public void setFecha(Date fecha) {
         this.fecha = fecha;
     }
@@ -44,7 +40,11 @@ public class CitaTutoria {
         this.hora = hora;
     }
 
-    public String getDate(){
+    public Date getDate() {
+        return fecha;
+    }
+
+    public String getFecha() {
         return formato.format(fecha);
     }
 
