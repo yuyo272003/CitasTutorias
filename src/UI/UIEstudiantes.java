@@ -58,13 +58,12 @@ public class UIEstudiantes {
                 i++;
             }
             Scanner sc = new Scanner(System.in);
+
             int respuestaMaestro = sc.nextInt();
-
             Maestro maestroSeleccionado = UIMaestro.maestrosConTutorias.get(respuestaMaestro-1);
-
-
             System.out.println("Seelccione una tutoria: ");
             i = 1;
+
             for (Maestro.TutoriasDisponibles td : UIMaestro.maestrosConTutorias.get(respuestaMaestro - 1).getCursoDisponibles()) {
                 System.out.println(i + " .- "+ td.getFecha() + " " + td.getHora());
                 i++;
@@ -76,9 +75,9 @@ public class UIEstudiantes {
                 System.out.println("Maestro " + maestroSeleccionado.getNombre() +
                         " ,Tutoria: " + maestroSeleccionado.getCursoDisponibles().get(tutoriaSeleccionado-1));
                 System.out.println("1.- Para continuar. \n2.- Cambiar Tutoria. ");
-                respuestaMaestro = sc.nextInt();
+                respuestaConfirmacion = sc.nextInt();
 
-            }while(respuestaMaestro < 1 || respuestaMaestro > 2);
+            }while(respuestaConfirmacion < 1 || respuestaConfirmacion > 2);
 
             if(respuestaConfirmacion == 1){
                 Maestro.TutoriasDisponibles ts = maestroSeleccionado.getCursoDisponibles().get(tutoriaSeleccionado-1);
