@@ -50,6 +50,12 @@ public class Estudiante extends Usuario{
      }
 
      public void addTutoriasMaestro(Maestro maestro, Date fecha, String hora){
+          CitaMaestro citaMaestro = new CitaMaestro(maestro,this);
+          citaMaestro.agendar(fecha, hora);
           tutoriasAgendadas.add(new CitaMaestro(maestro,this));
+     }
+
+     public ArrayList<CitaMaestro> getTutoriasAgendadas() {
+          return tutoriasAgendadas;
      }
 }

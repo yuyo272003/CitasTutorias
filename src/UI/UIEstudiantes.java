@@ -1,7 +1,10 @@
 package UI;
 
+import Model.CitaMaestro;
+import Model.Estudiante;
 import Model.Maestro;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UIEstudiantes {
@@ -80,7 +83,7 @@ public class UIEstudiantes {
             if(respuestaConfirmacion == 1){
                 Maestro.TutoriasDisponibles ts = maestroSeleccionado.getCursoDisponibles().get(tutoriaSeleccionado-1);
 
-                UIMenu.estudianteLoggeado.addTutoriasMaestro(maestroSeleccionado,ts.getFecha(), ts.getHora());
+                UIMenu.estudianteLoggeado.addTutoriasMaestro(maestroSeleccionado,ts.getDate(), ts.getHora());
             }
         }while(respuestaConfirmacion != 1);
 
@@ -90,6 +93,19 @@ public class UIEstudiantes {
     private static void listarMisTutorias() {
         System.out.println("..::Listar Tutorias::..");
 
+        ArrayList<CitaMaestro> misTutorias = UIMenu.estudianteLoggeado.getTutoriasAgendadas();
+
+
+        if(misTutorias.isEmpty()){
+            System.out.println("No existen tutorias agendadas");
+        }
+
+        int i = 1;
+        for (CitaMaestro cita : misTutorias){
+            System.out.println(i + ".- " + cita);
+            i++;
+        }
+        System.out.println();
     }
 
 
